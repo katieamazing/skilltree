@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="style.css">
+      <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+
+
+</head>
+<body>
+  <b>Hello skill tree thing</b>
+  <div id="app">
+    <ul>
+      <li v-for="(skill, skill_id) in skills">
+        <span v-if="skill_id == current_source">
+          **
+        </span>
+        {{ skill.text }}
+        <button v-on:click="focusSkill(skill_id)">Select</button>
+      </li>
+    </ul>
+    <p>{{ new_skill }}</p>
+    <input v-model="new_skill">
+    <button v-on:click="addSkill">Add</button>
+    <button v-on:click="clearSelection">Clear Selected Skill</button>
+  </div>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
