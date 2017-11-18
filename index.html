@@ -13,6 +13,7 @@
   <div id="app">
     <ul>
       <li v-for="(skill, skill_id) in skills">
+        {{ skill.img }}
         <span v-if="skill_id == current_source">
           **
         </span>
@@ -20,7 +21,15 @@
         <button v-on:click="focusSkill(skill_id)">Select</button>
       </li>
     </ul>
-    <p>{{ new_skill }}</p>
+
+  <p>Add a new skill</p>
+  <button v-on:click="openIconPanel">Choose an icon</button>
+    <ul v-if="isIconPanelOpen">
+      <li><img v-on:click="selectSkillIcon('flames')" src="imgs/dummyimg.jpg" id="flames"></img>
+      </li>
+      <li><img v-on:click="selectSkillIcon('swords')" src="imgs/dummyimg.jpg" id="swords"></img>
+      </li>
+    </ul>
     <input v-model="new_skill">
     <button v-on:click="addSkill">Add</button>
     <button v-on:click="clearSelection">Clear Selected Skill</button>
