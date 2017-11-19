@@ -3,6 +3,7 @@
 body {
   font-family: 'Roboto Condensed', sans-serif;
   color: #002828;
+  margin: 40px;
 }
 
 footer {
@@ -11,4 +12,16 @@ footer {
   margin: 50px auto 0;
   font-size: 14px;
   text-align: center;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-gap: 10px;
+  background-color: #fff;
+  color: #444;
+}
+
+.active {
+  border: 2px solid red;
 }
